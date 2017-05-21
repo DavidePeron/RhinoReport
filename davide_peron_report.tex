@@ -1,0 +1,168 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\newcommand{\writer}{Davide Peron}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\writer} % Top left head
+\chead{Case: Rhino-1151910} % Top center head
+\rhead{\today} % Top right header
+\lfoot{Signature: } % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0pt} % Size of the footer rule
+
+\fancypagestyle{plain}{
+	\fancyfoot[C]{}
+}
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+	\textmd{\textbf{EXPERT WITNESS REPORT}}\\
+	\vspace{0.3in}
+	\textsc{\Large IN RELATION TO}\\
+	\vspace{0.3in}
+	\textmd{\textbf{ILLEGAL RHINOCEROS IMAGES}}\\
+	\vspace{0.7in}
+	\textmd{\Large \textbf{BY REQUEST OF: }}
+	\textsc{\Large Mr. Gareth Davies}\\
+	\vspace{0.1in}
+	\textmd{\Large \textbf{NAME OF EXPERT: }}
+	\textsc{\Large \writer}\\
+	\vspace{0.1in}
+	\textmd{\Large \textbf{CASE NAME: }}
+	\textsc{\Large Rhino-1151910}
+	\date{}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\parbox{0.4\textwidth}{
+	\normalsize
+	\textbf{UK Statues and Guidelines Followed:\\
+	Criminal Procedure Rules, r 27.1 (1)\\
+	Criminal Justice Act 1967, s. 9\\
+	Magistrates’ Court Act 1980, s.5B\\
+	ACPO Digital Evidence Guidelines}
+}
+
+\vspace{0.5in}
+
+{\let\newpage\relax\maketitle}
+
+\centering
+\parbox{0.7\textwidth}{
+	This statement (consisting of \protect\pageref{LastPage}
+	pages each signed by myself) is true to the best of
+	my knowledge and belief and I make it knowing that, if tendered in evidence, I shall
+	be liable to prosecution if I have wilfully stated in it anything which I know to be false
+	or do not believe to be true.
+}
+
+\parbox{0.7\textwidth}{
+	\vspace{0.2in}
+	Signature: \hspace{2in} Date:
+}
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Curriculum Vitae}
+
+I am \writer ~and I am a student in MSc Telecommunications Engineering in University of Padova. I have a Bachelor Degree in Information Engineering.
+I have matured my skills in digital devices and networks analysis during my academic career and now I can analyse in depth some devices like smartphones, hard disks, live computer or computer networks.
+
+\vspace{0.3in}
+
+\begin{tabular}{l l}
+	\textbf{Name} & \writer\\
+	\textbf{Enrolment Number} & 1151910\\
+	\textbf{Institutional E-mail} & davide.peron.2@studenti.unipd.it\\
+	\textbf{Occupation} & Student in first year of Telecommunications Engineering
+\end{tabular}
+
+\section{Instruction/Objectives}
+
+\subsection{Abstract of the case}
+
+The city of New Orleans passed a law in 2004 making possession of nine or more unique rhinoceros images a serious crime. The network  administrator at the University of New Orleans recently alerted police when some illegal rhino traffic was flagged by his network monitoring software. The suspect is a research student and is the primary user of a University computer. The computer hard drive was missing at the time of the alleged offence.
+
+Police have taken a forensically image of USB flash drive seized from one of the University's computer.
+Network administrator has recovered three network traces involve the machine with the missing hard drive.
+
+\subsection{Statement of Instructions}
+The police has requested that I \writer ~carry out an investigation on the following evidence items:
+
+\begin{itemize}
+	\item \textit{RHINOUSB.dd} USB Image
+	\item Three network traces
+\end{itemize}
+
+The purpose of this report is to outline the result of the investigation in order to answer to the question \textit{Is there any evidence to show that the suspect did store illegal images on the University computer?}
+
+\section{Received Evidence Items}
+
+For each evidence item received, the correspondent MD5 hash checksum was provided.
+This checksum is recalculated at the end of the investigation to ensure the integrity of evidence items.
+
+The provided MD5 checksums are shown in \autoref{tab:checksum}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|l}
+		Evidence Item & MD5 checksum\\
+		\hline
+		RHINOUSB.dd & 80348c58eec4c328ef1f7709adc56a54\\
+		rhino.log & c0d0093eb1664cd7b73f3a5225ae3f30\\
+		rhino2.log & cd21eaf4acfb50f71ffff857d7968341\\
+		rhino3.log & 7e29f9d67346df25faaf18efcd95fc30
+	\end{tabular}
+	\caption{Evidence Items's MD5 checksums}
+	\label{tab:checksum}
+\end{table}
+
+\end{document}
