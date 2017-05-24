@@ -8,11 +8,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
+\usepackage{caption}
 \usepackage{fancyhdr} % Required for custom headers
 \usepackage{lastpage} % Required to determine the last page for the footer
 \usepackage{extramarks} % Required for headers and footers
 \usepackage[usenames,dvipsnames]{color} % Required for custom colors
 \usepackage{graphicx} % Required to insert images
+\usepackage{movie15}
 \usepackage{listings} % Required for insertion of code
 \usepackage{courier} % Required for the courier font
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
@@ -164,5 +166,171 @@ The provided MD5 checksums are shown in \autoref{tab:checksum}
 	\caption{Evidence Items's MD5 checksums}
 	\label{tab:checksum}
 \end{table}
+
+\section{Analysis of the evidence items}
+A new case in Autopsy has been created, including in it the evidence items. \autoref{fig:rhino_root} shows the root folder of \textit{RHINOUSB.dd} USB image.
+Searching for the keyword \textit{rhino} in Autopsy, I have obtained files that contains this word (as shown in \autoref{fig:rhino_search}). We can see at them one by one.
+
+\begin{minipage}[t]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhinousb_root.png}
+	\captionof{figure}{Root folder of \textit{RHINOUSB.dd} image}
+	\vspace{1cm}
+	\label{fig:rhino_root}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino_search.png}
+	\captionof{figure}{Result of the search on \textit{RHINOUSB.dd} image}
+	\vspace{1cm}
+	\label{fig:rhino_search}
+\end{minipage}
+
+\subsection{rhino.log analysis}
+Opening \textit{rhino.log} I have found that several FTP file transfers has been recorded.
+In \textit{rhino.log} has been recorded each FTP command, including the name of the files transfered.
+Through this analysis I have found some references to \textit{rhino1.jpg} [\autoref{fig:rhino1}], \textit{rhino3.jpg} [\autoref{fig:rhino3}] and \textit{rhino2.jpg}[\autoref{fig:rhino2}].
+This last image was contained into an archive called \textit{contraband.zip}.
+In this file I have found also the name of the account from which the crime was performed ad the relative password:
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|l}
+		\textbf{Account} & gnome\\
+		\hline
+		\textbf{Password} & gnome123\\
+	\end{tabular}
+	\caption{Data of the account from which the crime was performed}
+	\label{tab:account}
+\end{table}
+
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino1inrhinolog.png}
+	\captionof{figure}{Evidence of existence of \textit{rhino1.jpg} image}
+	\vspace{1cm}
+	\label{fig:rhino1}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino3inrhinolog.png}
+	\captionof{figure}{Evidence of existence of \textit{rhino3.jpg} image}
+	\vspace{1cm}
+	\label{fig:rhino3}
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino2inrhinolog.png}
+	\captionof{figure}{Evidence of existence of \textit{rhino2.jpg} image inside \textit{contraband.zip}}
+	\vspace{1cm}
+	\label{fig:rhino2}
+\end{minipage}
+
+\subsection{rhino2.log analysis}
+Opening \textit{rhino2.log} in Autopsy I have found several HTTP Requests.
+Between them I have found references to \textit{rhino4.jpg} and \textit{rhino5.gif}, two fraud images (visible in \autoref{fig:rhino45}, \autoref{fig:rhino4} and \autoref{fig:rhino5}).
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{img/rhino45.png}
+	\caption{Evidence of existence of \textit{rhino4.jpg} and \textit{rhino5.gif} images}
+	\label{fig:rhino45}
+\end{figure}
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino4.png}
+	\captionof{figure}{Evidence of existence of \textit{rhino4.jpg} image}
+	\vspace{1cm}
+	\label{fig:rhino4}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino5.png}
+	\captionof{figure}{Evidence of existence of \textit{rhino5.gif} image}
+	\vspace{1cm}
+	\label{fig:rhino5}
+\end{minipage}
+
+\subsection{rhino3.log analysis}
+Analysing this file, I have found several references to an executable file called \textit{rhino.exe} inside an HTTP Request. One of these references is shown in \autoref{fig:rhinoexe}.
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{img/rhinoexe.png}
+	\caption{Evidence of existence of \textit{rhino.exe}}
+	\label{fig:rhinoexe}
+\end{figure}
+
+\subsection{f0334472.doc analysis}
+This is a plain text file. Here I have found a brief summary of the crime. In the last part of the text is written the following (proved by \autoref{fig:evtext}):
+
+\vspace{0.5cm}
+\parbox{0.8\textwidth}{
+	\normalsize
+	\textit{Rhino pictures illegal?   Makes me sick.  I “hid” the photos…hehehehe.  Apparently, if there are less than 10 photos, it’s no big deal.\\
+	OK.  Things are getting a little weird.  I zapped the hard drive and then threw it into the Mississippi River.  I’m gonna reformat my USB key after this entry, but try not to destroy the good stuff.  I need to change the password on the gnome account that Jeremy gave me.  I can probably just do that at Radio Shack.
+	}
+}
+\vspace{0.5cm}
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{img/evtext.png}
+	\caption{Text found in \textit{f0334472.doc}}
+	\label{fig:evtext}
+\end{figure}
+
+In this text there is written some information about the USB key used for the crime and about the account from which the crime was performed.
+In the metadata of this file I have found some other information about it.
+
+I have found that this text is written with \textit{Microsoft Office Word}.
+The metadata of this file also contain the proprietary of the PC from which this text was written, that is \textit{University of New Orleans}.
+In the file \textit{Unalloc\_12\_279040\_259506176}, an unallocated part of the memory, there's a longer preamble text after which is appended the same text of \textit{f0334472.doc}.
+
+\subsection{Search for images in img\_RHINOUSB.dd}
+Searching in the folders of \textit{img\_RHINOUSB.dd} I have found some rhino's images. They are contained in \textit{\/img\_RHINOUSB.dd\/\$CarvedFiles\/} and are reported in the following.
+
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino1.jpg}
+	\captionof{figure}{Evidence \textit{\/img\_RHINOUSB.dd/\$CarvedFiles/20-f0105848.jpg}}
+	\vspace{1cm}
+	\label{fig:rhino1img}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino2.jpg}
+	\captionof{figure}{Evidence in \textit{\/img\_RHINOUSB.dd/\$CarvedFiles/21-f0105864.jpg}}
+	\vspace{1cm}
+	\label{fig:rhino2img}
+\end{minipage}
+
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino3.jpg}
+	\captionof{figure}{Evidence in \textit{\/img\_RHINOUSB.dd/\$CarvedFiles/22-f0106320.gif}}
+	\vspace{1cm}
+	\label{fig:rhino3img}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[h]{0.45\textwidth}
+	\centering
+	\vspace{0.5cm}
+	\includegraphics[width=0.9\textwidth]{img/rhino4.jpg}
+	\captionof{figure}{Evidence in \textit{\/img\_RHINOUSB.dd/\$CarvedFiles/23-f0106344.gif}}
+	\vspace{1cm}
+	\label{fig:rhino4img}
+\end{minipage}
 
 \end{document}
