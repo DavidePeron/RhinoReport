@@ -116,7 +116,7 @@
 \section{Curriculum Vitae}
 
 I am \writer ~and I am a student in MSc Telecommunications Engineering in University of Padova. I have a Bachelor Degree in Information Engineering.
-I have matured my skills in digital devices and networks analysis during my academic career and now I can analyse in depth some devices like smartphones, hard disks, live computer or computer networks.
+I have matured my skills in digital devices and networks analysis during my academic career and now I can analyse in depth some devices like smartphones, hard disks, live computers or computer networks.
 
 \vspace{0.3in}
 
@@ -149,7 +149,7 @@ The purpose of this report is to outline the result of the investigation in orde
 \section{Received Evidence Items}
 
 For each evidence item received, the correspondent MD5 hash checksum was provided.
-This checksum is recalculated at the end of the investigation to ensure the integrity of evidence items.
+This checksum has been recalculated at the end of the investigation to ensure the integrity of evidence items.
 
 The provided MD5 checksums are shown in \autoref{tab:checksum}
 
@@ -168,7 +168,7 @@ The provided MD5 checksums are shown in \autoref{tab:checksum}
 \end{table}
 
 \section{Analysis of the evidence items}
-A new case in Autopsy has been created, including in it the evidence items. \autoref{fig:rhino_root} shows the root folder of \textit{RHINOUSB.dd} USB image.
+A new case in Autopsy\footnote{Some more information about software used during the investigation, can be found in Appendix 1.} has been created, including in it the evidence items. \autoref{fig:rhino_root} shows the root folder of \textit{RHINOUSB.dd} USB image.
 Searching for the keyword \textit{rhino} in Autopsy, I have obtained files that contains this word (as shown in \autoref{fig:rhino_search}). We can see at them one by one.
 
 \begin{minipage}[t]{0.45\textwidth}
@@ -190,11 +190,11 @@ Searching for the keyword \textit{rhino} in Autopsy, I have obtained files that 
 \end{minipage}
 
 \subsection{rhino.log analysis}
-Opening \textit{rhino.log} I have found that several FTP file transfers has been recorded.
-In \textit{rhino.log} has been recorded each FTP command, including the name of the files transfered.
+Opening \textit{rhino.log} I have found that several FTP file transfers have been recorded.
+In \textit{rhino.log} has been recorded each FTP command, including the name of the files transferred.
 Through this analysis I have found some references to \textit{rhino1.jpg} [\autoref{fig:rhino1}], \textit{rhino3.jpg} [\autoref{fig:rhino3}] and \textit{rhino2.jpg}[\autoref{fig:rhino2}].
 This last image was contained into an archive called \textit{contraband.zip}.
-In this file I have found also the name of the account from which the crime was performed ad the relative password:
+In this file I have found also the name of the account from which the crime was performed and the relative password:
 
 \begin{table}[h!]
 	\centering
@@ -332,5 +332,74 @@ Searching in the folders of \textit{img\_RHINOUSB.dd} I have found some rhino's 
 	\vspace{1cm}
 	\label{fig:rhino4img}
 \end{minipage}
+
+\section{Expert Witness Opinion}
+
+During the investigation I have found many evidence of the crime in the evidence items.
+
+The file \textit{f0334472.doc} demonstrate that the accused has hidden rhino pictures inside the USB key. According to this file, this USB key has been reformatted (at \textit{Radio Shack}) hoping not to overwrite the \textit{good} stuff, and the hard drive containing fraud images has been disposed of into the Mississippi River.
+
+This file also hints at a gnome account given to the accused by a certain Jeremy.
+This is a connection to \textit{rhino.log}, since a gnome account is used to transfer some fraud images via FTP protocol.
+In this file there is also the password of this \textit{gnome} account (that is \textit{gnome123}).
+
+In \textit{rhino.log} and in the other two \textit{.log} files there are several references to fraud images, in specific to \textit{rhino1.jpg}, \textit{rhino2.jpg}, \textit{rhino3.jpg}, \textit{rhino4.jpg} and \textit{rhino5.gif}, and to an \textit{.exe} file, all these are mentioned in FTP or HTTP Requests, this prove that these files have been in the New Orleans University's PC for a while.
+
+Other images have been found in the \textit{\$CarvedFiles/} folder.
+In conclusion, I have proved that several rhino's images have been stored in the New Orleans University's PC for a while, I have not recovered these images at all but I have found clear references to them.
+
+\section{Non-Availability of Expert Witness}
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{img/calendar.png}
+\end{figure}
+
+\section{Contact Information}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|l}
+		\textbf{Full name} & Davide Peron\\
+		\hline
+		\textbf{Institutional e-mail} & davide.peron.2@studenti.unipd.it\\
+		\hline
+		\textbf{Work address} & Via Gradenigo 6/b 35131 - Padova Italy\\
+	\end{tabular}
+	\label{tab:contacts}
+\end{table}
+
+\section{Appendix 1 - Software used}
+
+For the whole investigation, I have used Autopsy and S-Tools as Forensics Software Tools and Windows 7 version 6.1 as Operating System.
+
+\subsection{Autopsy}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|l}
+		\textbf{Software name} & Autopsy\\
+		\hline
+		\textbf{Version} & 4.3.0\\
+	\end{tabular}
+\end{table}
+
+$Autopsy^{TM}$ is an open source digital forensics platform used to examine several types of items, logical or phisical volumes.
+It is used by law enforcement, military, and corporate examiners to investigate what happened on a computer. It is based on \textit{The Sleuth Kit}, a collection of open source programs aimed to investigate pieces of software or hardware.
+
+\subsection{S-Tools}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|l}
+		\textbf{Software name} & S-Tools\\
+		\hline
+		\textbf{Version} & 4.00\\
+	\end{tabular}
+\end{table}
+
+\textit{S-Tools} is an open source software that offer several stenography tools, to create or find files with stenography in them.
+
+I've used this program to ensure that no other rhino images are hidden into some files.
+
 
 \end{document}
